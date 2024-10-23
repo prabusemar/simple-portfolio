@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+
+  <!-- Put your site title here -->
+  <title>
+    Pribadi Ramadhan | A Full-Stack Web Developer | based in Ciamis, Indonesia.
+  </title>
+
+  <meta name="description" content="Add small description of yourslef.">
+  <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
+  <meta name="keywords" content="Put your name, skills and some coding keywords" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css" />
+
+</head>
+
+<body>
+
+  <!-- ***** Header ***** -->
+  <header class="header" role="banner" id="top">
+    <div class="row">
+      <nav class="nav" role="navigation">
+        <ul class="nav__items">
+          <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+          <li class="nav__item"><a href="#clients" class="nav__link">Clients</a></li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="text-center header-content">
+        <h1 class="header-title">
+          <!-- Replace the following name with your name -->
+          Pribadi Ramadhan
+        </h1>
+        <!-- Put a small paragraph about yourself -->
+        <p class="header-subtitle">Full-Stack Web Developer based in Ciamis, Indonesia.</p>
+        <a href="#contact" class="btn btn-danger btn-lg mt-4">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <main role="main">
+
+    <!-- ***** About ***** -->
+
+    <section class="about" id="about">
+      <div class="row">
+        <h2>About Me</h2>
+        <div class="about__content">
+          <div class="about__text">
+            <!-- Replace the below paragraph with info about yourself -->
+            <p>
+              With a strong foundation in both front-end and back-end development, I specialize in building robust,
+              user-friendly web applications that meet the needs of modern users. My expertise spans across Fullstack
+              Development, with a deep focus on JavaScript (React.js, Vue.js, Inertia) and Laravel, complemented by a
+              flair for creating visually compelling and highly responsive landing pages using Framer and Elementor.
+
+            </p>
+            <!-- Provide a link to your resume -->
+            <a href="#" class="btn btn-lg">My Resume</a>
+          </div>
+
+          <div class="about__photo-container">
+            <!-- Add a nice photo of yourself -->
+            <img class="about__photo rounded-3" src="./images/pribadi.jpeg" alt="" width="390"
+              style="border-radius: 10px;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ***** Services ***** -->
+    <section class="services py-5" id="services" style="background-color: #121212; color: #ffffff;">
+      <div class="container">
+        <h2 class="text-center mb-5" style="color: #f8f9fa; font-size: 3rem;">My Services</h2>
+        <div class="row justify-content-center">
+
+          <!-- Card 1: Basic Coding -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 text-center service-card"
+              style="background-color: #ffffff; border: none; border-radius: 12px; transition: transform 0.3s, box-shadow 0.3s;">
+              <div class="card-body" style="padding: 40px;">
+                <img src="./images/online-web-development-meeting.png" alt="Basic Coding" class="mb-4 img-fluid"
+                  style="max-width: 100%; height: 200px; object-fit: contain;">
+                <h5 class="card-title" style="color: #000000; font-size: 3rem; font-weight: 600;">Basic Coding</h5>
+                <p class="card-text" style="color: #333333; font-size: 1.5rem;">Learn coding from the ground up to build
+                  websites using HTML, CSS, and JavaScript. Perfect for beginners starting their journey in programming.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Web Development (JS Stack / Laravel) -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 text-center service-card"
+              style="background-color: #ffffff; border: none; border-radius: 12px; transition: transform 0.3s, box-shadow 0.3s;">
+              <div class="card-body" style="padding: 40px;">
+                <img src="./images/man-working-on-website-development.png" alt="Web Development" class="mb-4 img-fluid"
+                  style="max-width: 100%; height: 200px; object-fit: contain;">
+                <h5 class="card-title" style="color: #000000; font-size: 3rem; font-weight: 600;">Web Development (JS
+                  Stack / Laravel)</h5>
+                <p class="card-text" style="color: #333333; font-size: 1.5rem;">Website development using modern
+                  JavaScript stacks like Node.js and React or backend development with Laravel.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: WordPress Development -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 text-center service-card"
+              style="background-color: #ffffff; border: none; border-radius: 12px; transition: transform 0.3s, box-shadow 0.3s;">
+              <div class="card-body" style="padding: 40px;">
+                <img src="./images/male-web-developer-adding-design-elements.png" alt="WordPress Development"
+                  class="mb-4 img-fluid" style="max-width: 100%; height: 200px; object-fit: contain;">
+                <h5 class="card-title" style="color: #000000; font-size: 3rem; font-weight: 600;">WordPress Development
+                </h5>
+                <p class="card-text" style="color: #333333; font-size: 1.5rem;">Build websites using WordPress, from
+                  simple landing pages to dynamic content sites with ready-to-use plugins.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Landing Page with Framer -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 text-center service-card"
+              style="background-color: #ffffff; border: none; border-radius: 12px; transition: transform 0.3s, box-shadow 0.3s;">
+              <div class="card-body" style="padding: 40px;">
+                <img src="./images/woman-designing-website.png" alt="Landing Page with Framer" class="mb-4 img-fluid"
+                  style="max-width: 100%; height: 200px; object-fit: contain;">
+                <h5 class="card-title" style="color: #000000; font-size: 3rem; font-weight: 600;">Landing Page with
+                  Framer</h5>
+                <p class="card-text" style="color: #333333; font-size: 1.5rem;">Create modern and interactive landing
+                  pages using Framer. Perfect for boosting business conversions with stunning designs.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: UI/UX Design -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 text-center service-card"
+              style="background-color: #ffffff; border: none; border-radius: 12px; transition: transform 0.3s, box-shadow 0.3s;">
+              <div class="card-body" style="padding: 40px;">
+                <img src="./images/man-placing-ui-ux-design-elements-on-application.png" alt="UI/UX Design"
+                  class="mb-4 img-fluid" style="max-width: 100%; height: 200px; object-fit: contain;">
+                <h5 class="card-title" style="color: #000000; font-size: 3rem; font-weight: 600;">UI/UX Design</h5>
+                <p class="card-text" style="color: #333333; font-size: 1.5rem;">UI/UX design services for applications
+                  and websites. Focus on creating intuitive user experiences with aesthetics and functionality in mind.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ***** Skills ***** -->
+    <section class="skills" id="skills">
+      <div class="container">
+        <h2 class="text-left mb-4 style=" color: #f8f9fa; font-size: 5rem">My Skills</h2>
+        <div class="row text-center">
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/html.png" alt="HTML5" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/css.png" alt="CSS3" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/javascript.png" alt="JavaScript" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/react.png" alt="React" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/vue.png" alt="Vue.js" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/nodejs.png" alt="Node.js" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/php.png" alt="PHP" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/tailwind.png" alt="Tailwind" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/git.png" alt="Git" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/Framer.png" alt="Framer" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/mysql.png" alt="Mysql" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/jquery.png" alt="Jquery" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/npm.png" alt="Npm" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/python.png" alt="Python" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/typescript.png" alt="Typescript" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/sql.png" alt="SQL" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/nestjs.png" alt="Nest" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/mongo-db.png" alt="Mongodb" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/flutter.png" alt="Flutter" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/wordpress.png" alt="Wordpress" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/visual-studio-code.png" alt="VS Code" class="img-fluid" style="max-width: 50px;" />
+          </div>
+          <div class="col-4 col-sm-3 col-md-2 mb-4">
+            <img src="./images/github.svg" alt="GitHub" class="img-fluid" style="max-width: 50px;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ***** Work ***** -->
+    <section class="work" id="work">
+      <div class="row">
+        <h2>My Work</h2>
+        <div class="work__boxes">
+
+          <!-- Each div with the work__box class is a project. -->
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>RPLSmart Single Page</h3>
+              <p>
+                Responsive web platform designed to enhance the programming skills of students from the comfort of their
+                homes.
+              </p>
+              <ul class="work__list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>JQuery</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://project3-rplsmart.netlify.app/" target="_blank" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/prabusemar/learning-web" title="View Source Code" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/Screenshot 2024-10-23 115244.png" class="work__image" alt="Project 1" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>RPLSmart V2</h3>
+              <p>
+                Online programming course platform with learning paths such as web development, mobile, data science,
+                and AI/ML.
+              </p>
+              <ul class="work__list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://rplsmart.netlify.app/" target="_blank" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/prabusemar/submission-web-dasar" title="View Source Code" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/Screenshot 2024-10-23 115530.png" class="work__image" alt="Project 1" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Bookshelf App</h3>
+              <p>
+                Bookshelf App is a dynamic web application designed to help users manage their personal book
+                collections.
+              </p>
+              <ul class="work__list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>DOM Manipulation</li>
+                <li>Local Storage</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://rak-bukuku.netlify.app/" target="_blank" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/prabusemar/bookshelf-v2024" title="View Source Code" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/Screenshot 2024-10-23 115737.png" class="work__image" alt="Project 1" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>CBT for School</h3>
+              <p>
+                Web app for online exams and computer-based testing (CBT), Easily create and manage exams online with
+                comprehensive reporting.
+              </p>
+              <ul class="work__list">
+                <li>Vue JS</li>
+                <li>Inertia JS</li>
+                <li>Laravel</li>
+                <li>Mysql</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://ujian.sinaukode.my.id/" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/prabusemar/ujian-cbt">
+                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/Screencapture-ujian-sinaukode-my-id-2024-10-23-11_57_54.png" class="work__image"
+                alt="Project 1" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>CMS RPLSmart Blog</h3>
+              <p>
+                Content Management System (CMS) for managing articles, tutorial writing, and blog posts.
+              </p>
+              <ul class="work__list">
+                <li>Vue Js</li>
+                <li>Nuxt.js</li>
+                <li>Laravel as API</li>
+                <li>Mysql</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="rplsmart-blog.vercel.app/" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/prabusemar/cms-rplsmart">
+                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/Screenshot 2024-10-23 115956.png" class="work__image" alt="Project 3" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>SmartLearn</h3>
+              <p>
+                SmartLearn is an online course platform that provides a variety of courses and tutorials in the field of
+                technology.
+              </p>
+              <ul class="work__list">
+                <li>Tailwind CSS</li>
+                <li>Alpine JS</li>
+                <li>Laravel</li>
+                <li>Mysql</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://smartlearn.sinaukode.my.id/" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/prabusemar/kursus-online">
+                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/Screenshot 2024-10-23 120059.png" class="work__image" alt="Project 3" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ***** Clients ***** -->
+
+    <section class="client" id="clients">
+      <div class="row">
+        <h2>Clients</h2>
+        <div class="client__logos">
+          <!-- Add logos of the clients or companies you'have worked with. -->
+          <img src="./images/logo-smea.png" class="client__logo" alt="Company 1" />
+          <img src="./images/maul.png" class="client__logo" alt="Company 2" />
+          <img src="./images/PPLG.png" class="client__logo" alt="Company 3" />
+          <img src="./images/rpl.png" class="client__logo" alt="Company 4" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ***** Contact ***** -->
+
+  <section class="contact" id="contact">
+    <div class="row">
+      <h2>Get in Touch</h2>
+      <div class="contact__info">
+        <p>
+
+          With a background in Software Engineering Education, I bring a unique blend of technical expertise and
+          user-centric design to every project. Let’s connect to turn your ideas into impactful digital products!. The
+          quickest way to reach out to
+          me is via an email.
+        </p>
+        <!-- Replace the email with yours -->
+        <a href="mailto:you@example.com" class="btn btn-lg">pribadi.ramadhan@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ***** Footer ***** -->
+
+  <footer role="contentinfo" class="footer">
+    <div class="row">
+      <!-- Update the links to point to your accounts -->
+      <ul class="footer__social-links">
+        <li class="footer__social-link-item">
+          <a href="https://github.com/prabusemar/" title="Link to Github Profile">
+            <img src="./images/github.svg" class="footer__social-image" alt="Github">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://codepen.io/nisar_hassan" title="Link to Leetcode Profile">
+            <img src="./images/codepen.svg" class="footer__social-image" alt="Leetcode">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://www.linkedin.com/in/pribadi-ramadhan/">
+            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image"
+              alt="Linkedin">
+          </a>
+        </li>
+      </ul>
+
+      <p>
+        &copy; 2024 - Created by <a href="https://github.com/prabusemar" class="link">Pribadi Ramadhan</a>.
+      </p>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" title="Back to Top">
+    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image" />
+  </a>
+  <script src="./index.js"></script>
+</body>
+
+</html>
