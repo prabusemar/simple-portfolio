@@ -460,6 +460,16 @@ body:not(.user-is-tabbing) a:focus {
     }
 }
 
+@media(max-width: 900px) and (min-width: 768px) {
+    .header{
+        padding-bottom: 360px;
+    }
+    .header-subtitle {
+        text-align: center;
+        margin-left: 100px;
+    }
+}
+
 /* --------------------------------------- */
 /* ----- Work ----- */
 /* --------------------------------------- */
@@ -535,26 +545,37 @@ body:not(.user-is-tabbing) a:focus {
 
 .client__logos {
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .client__logo {
-    height: 10rem;
-    max-width: 18rem;
+    flex: 1 1 22%;
+    max-width: 22%;
+    height: auto;
+    max-height: 80px;
 }
 
-@media(max-width: 1240px) {
-    .client__logos {
-        flex-direction: column;
-        align-items: center;
-        overflow-x: hidden;
-        padding: var(--gutter-normal);
-    }
-
-    .client__logo:not(:last-of-type) {
-        margin-bottom: var(--gutter-medium);
+@media (max-width: 1024px) {
+    .client__logo {
+        flex: 1 1 30%;
+        max-width: 30%;
+        max-height: 70px;
+        margin-top: 15px;
     }
 }
+
+@media (max-width: 768px) {
+    .client__logo {
+        flex: 1 1 45%;
+        max-width: 45%;
+        max-height: 60px;
+    }
+}
+
+
+
 
 /* --------------------------------------- */
 /* ----- About ----- */
