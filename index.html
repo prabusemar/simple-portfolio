@@ -263,200 +263,257 @@
     <section class="work" id="work">
       <div class="row">
         <h2>My Work</h2>
-        <div class="work__boxes">
 
-          <!-- Each div with the work__box class is a project. -->
+        <div class="work-slider">
+          <div class="work-slider__container">
+            <div class="work-slider__track">
 
-          <div class="work__box">
-            <div class="work__text">
-              <h3>RPLSmart Single Page</h3>
-              <p>
-                Responsive web platform designed to enhance the programming skills of students from the comfort of their
-                homes.
-              </p>
-              <ul class="work__list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>JQuery</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://project3-rplsmart.netlify.app/" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/prabusemar/learning-web" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
-                </a>
+              <!-- Slide 1: RPLSmart Single Page -->
+              <div class="work-slider__slide work-slider__slide--active">
+                <div class="work-slider__item">
+                  <div class="work-slider__counter">1</div>
+                  <div class="work-slider__image-box">
+                    <img src="./images/Screenshot 2024-10-23 115244.png" class="work-slider__image"
+                      alt="RPLSmart Single Page">
+                  </div>
+                  <div class="work-slider__content">
+                    <h3 class="work-slider__title">RPLSmart Single Page</h3>
+                    <p class="work-slider__description">
+                      Responsive web platform designed to enhance the programming skills of students from the comfort of
+                      their homes.
+                    </p>
+                    <ul class="work-slider__list">
+                      <li>HTML</li>
+                      <li>CSS</li>
+                      <li>JavaScript</li>
+                      <li>JQuery</li>
+                    </ul>
+                    <div class="work-slider__links">
+                      <a href="https://project3-rplsmart.netlify.app/" target="_blank" class="work-slider__link">
+                        Visit Site <span>&rarr;</span>
+                      </a>
+                      <a href="https://github.com/prabusemar/learning-web" title="View Source Code" target="_blank">
+                        <img src="./images/github.svg" class="work-slider__code" alt="GitHub">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="work-slider__progress"></div>
+                </div>
               </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/Screenshot 2024-10-23 115244.png" class="work__image" alt="Project 1" />
+
+              <!-- Slide 2: RPLSmart V2 -->
+              <div class="work-slider__slide">
+                <div class="work-slider__item">
+                  <div class="work-slider__counter">2</div>
+                  <div class="work-slider__image-box">
+                    <img src="./images/Screenshot 2024-10-23 115530.png" class="work-slider__image" alt="RPLSmart V2">
+                  </div>
+                  <div class="work-slider__content">
+                    <h3 class="work-slider__title">RPLSmart V2</h3>
+                    <p class="work-slider__description">
+                      Online programming course platform with learning paths such as web development, mobile, data
+                      science, and AI/ML.
+                    </p>
+                    <ul class="work-slider__list">
+                      <li>HTML</li>
+                      <li>CSS</li>
+                      <li>JavaScript</li>
+                    </ul>
+                    <div class="work-slider__links">
+                      <a href="https://rplsmart.netlify.app/" target="_blank" class="work-slider__link">
+                        Visit Site <span>&rarr;</span>
+                      </a>
+                      <a href="https://github.com/prabusemar/submission-web-dasar" title="View Source Code"
+                        target="_blank">
+                        <img src="./images/github.svg" class="work-slider__code" alt="GitHub">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="work-slider__progress"></div>
+                </div>
+              </div>
+
+              <!-- Slide 3: Bookshelf App -->
+              <div class="work-slider__slide">
+                <div class="work-slider__item">
+                  <div class="work-slider__counter">3</div>
+                  <div class="work-slider__image-box">
+                    <img src="./images/Screenshot 2024-10-23 115737.png" class="work-slider__image" alt="Bookshelf App">
+                  </div>
+                  <div class="work-slider__content">
+                    <h3 class="work-slider__title">Bookshelf App</h3>
+                    <p class="work-slider__description">
+                      Bookshelf App is a dynamic web application designed to help users manage their personal book
+                      collections.
+                    </p>
+                    <ul class="work-slider__list">
+                      <li>HTML</li>
+                      <li>CSS</li>
+                      <li>JavaScript</li>
+                      <li>DOM Manipulation</li>
+                      <li>Local Storage</li>
+                    </ul>
+                    <div class="work-slider__links">
+                      <a href="https://rak-bukuku.netlify.app/" target="_blank" class="work-slider__link">
+                        Visit Site <span>&rarr;</span>
+                      </a>
+                      <a href="https://github.com/prabusemar/bookshelf-v2024" title="View Source Code" target="_blank">
+                        <img src="./images/github.svg" class="work-slider__code" alt="GitHub">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="work-slider__progress"></div>
+                </div>
+              </div>
+
+              <!-- Slide 4: Company Profile -->
+              <div class="work-slider__slide">
+                <div class="work-slider__item">
+                  <div class="work-slider__counter">4</div>
+                  <div class="work-slider__image-box">
+                    <img src="./images/Maul SS.png" class="work-slider__image" alt="Company Profile">
+                  </div>
+                  <div class="work-slider__content">
+                    <h3 class="work-slider__title">Company Profile</h3>
+                    <p class="work-slider__description">
+                      Company Profile of CV Maul Putra Ampel.
+                    </p>
+                    <ul class="work-slider__list">
+                      <li>Wordpress</li>
+                      <li>Elementor</li>
+                      <li>Woocomerce</li>
+                    </ul>
+                    <div class="work-slider__links">
+                      <a href="https://maulputraampel.com/" class="work-slider__link">
+                        Visit Site <span>&rarr;</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="work-slider__progress"></div>
+                </div>
+              </div>
+
+              <!-- Slide 5: CBT for School -->
+              <div class="work-slider__slide">
+                <div class="work-slider__item">
+                  <div class="work-slider__counter">5</div>
+                  <div class="work-slider__image-box">
+                    <img src="./images/Screencapture-ujian-sinaukode-my-id-2024-10-23-11_57_54.png"
+                      class="work-slider__image" alt="CBT for School">
+                  </div>
+                  <div class="work-slider__content">
+                    <h3 class="work-slider__title">CBT for School</h3>
+                    <p class="work-slider__description">
+                      Web app for online exams and computer-based testing (CBT), Easily create and manage exams online
+                      with comprehensive reporting.
+                    </p>
+                    <ul class="work-slider__list">
+                      <li>Vue JS</li>
+                      <li>Inertia JS</li>
+                      <li>Laravel</li>
+                      <li>Mysql</li>
+                    </ul>
+                    <div class="work-slider__links">
+                      <a href="https://ujian.sinaukode.my.id/" class="work-slider__link">
+                        Visit Site <span>&rarr;</span>
+                      </a>
+                      <a href="https://github.com/prabusemar/ujian-cbt">
+                        <img src="./images/github.svg" class="work-slider__code" title="View Source Code" alt="GitHub">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="work-slider__progress"></div>
+                </div>
+              </div>
+
+              <!-- Slide 6: CMS RPLSmart Blog -->
+              <div class="work-slider__slide">
+                <div class="work-slider__item">
+                  <div class="work-slider__counter">6</div>
+                  <div class="work-slider__image-box">
+                    <img src="./images/Screenshot 2024-10-23 115956.png" class="work-slider__image"
+                      alt="CMS RPLSmart Blog">
+                  </div>
+                  <div class="work-slider__content">
+                    <h3 class="work-slider__title">CMS RPLSmart Blog</h3>
+                    <p class="work-slider__description">
+                      Content Management System (CMS) for managing articles, tutorial writing, and blog posts.
+                    </p>
+                    <ul class="work-slider__list">
+                      <li>Vue Js</li>
+                      <li>Nuxt.js</li>
+                      <li>Laravel as API</li>
+                      <li>Mysql</li>
+                    </ul>
+                    <div class="work-slider__links">
+                      <a href="rplsmart-blog.vercel.app/" class="work-slider__link">
+                        Visit Site <span>&rarr;</span>
+                      </a>
+                      <a href="https://github.com/prabusemar/cms-rplsmart">
+                        <img src="./images/github.svg" class="work-slider__code" title="View Source Code" alt="GitHub">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="work-slider__progress"></div>
+                </div>
+              </div>
+
+              <!-- Slide 7: SmartLearn -->
+              <div class="work-slider__slide">
+                <div class="work-slider__item">
+                  <div class="work-slider__counter">7</div>
+                  <div class="work-slider__image-box">
+                    <img src="./images/Screenshot 2024-10-23 120059.png" class="work-slider__image" alt="SmartLearn">
+                  </div>
+                  <div class="work-slider__content">
+                    <h3 class="work-slider__title">SmartLearn</h3>
+                    <p class="work-slider__description">
+                      SmartLearn is an online course platform that provides a variety of courses and tutorials in the
+                      field of technology.
+                    </p>
+                    <ul class="work-slider__list">
+                      <li>Tailwind CSS</li>
+                      <li>Alpine JS</li>
+                      <li>Laravel</li>
+                      <li>Mysql</li>
+                    </ul>
+                    <div class="work-slider__links">
+                      <a href="https://smartlearn.sinaukode.my.id/" class="work-slider__link">
+                        Visit Site <span>&rarr;</span>
+                      </a>
+                      <a href="https://github.com/prabusemar/kursus-online">
+                        <img src="./images/github.svg" class="work-slider__code" title="View Source Code" alt="GitHub">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="work-slider__progress"></div>
+                </div>
+              </div>
+
             </div>
           </div>
 
-          <div class="work__box">
-            <div class="work__text">
-              <h3>RPLSmart V2</h3>
-              <p>
-                Online programming course platform with learning paths such as web development, mobile, data science,
-                and AI/ML.
-              </p>
-              <ul class="work__list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-              </ul>
+          <!-- Navigation Buttons -->
+          <button class="work-slider__btn work-slider__btn--prev">
+            <svg viewBox="0 0 24 24">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+          </button>
+          <button class="work-slider__btn work-slider__btn--next">
+            <svg viewBox="0 0 24 24">
+              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+            </svg>
+          </button>
 
-              <div class="work__links">
-                <a href="https://rplsmart.netlify.app/" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/prabusemar/submission-web-dasar" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/Screenshot 2024-10-23 115530.png" class="work__image" alt="Project 1" />
-            </div>
-          </div>
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Bookshelf App</h3>
-              <p>
-                Bookshelf App is a dynamic web application designed to help users manage their personal book
-                collections.
-              </p>
-              <ul class="work__list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>DOM Manipulation</li>
-                <li>Local Storage</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://rak-bukuku.netlify.app/" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/prabusemar/bookshelf-v2024" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/Screenshot 2024-10-23 115737.png" class="work__image" alt="Project 1" />
-            </div>
-          </div>
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Company Profile</h3>
-              <p>
-                Company Profile of CV Maul Putra Ampel.
-              </p>
-              <ul class="work__list">
-                <li>Wordpress</li>
-                <li>Elementor</li>
-                <li>Woocomerce</li>
-
-              </ul>
-
-              <div class="work__links">
-                <a href="https://maulputraampel.com/" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/Maul SS.png" class="work__image" alt="Project 3" />
-            </div>
-          </div>
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>CBT for School</h3>
-              <p>
-                Web app for online exams and computer-based testing (CBT), Easily create and manage exams online with
-                comprehensive reporting.
-              </p>
-              <ul class="work__list">
-                <li>Vue JS</li>
-                <li>Inertia JS</li>
-                <li>Laravel</li>
-                <li>Mysql</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://ujian.sinaukode.my.id/" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/prabusemar/ujian-cbt">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/Screencapture-ujian-sinaukode-my-id-2024-10-23-11_57_54.png" class="work__image"
-                alt="Project 1" />
-            </div>
-          </div>
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>CMS RPLSmart Blog</h3>
-              <p>
-                Content Management System (CMS) for managing articles, tutorial writing, and blog posts.
-              </p>
-              <ul class="work__list">
-                <li>Vue Js</li>
-                <li>Nuxt.js</li>
-                <li>Laravel as API</li>
-                <li>Mysql</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="rplsmart-blog.vercel.app/" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/prabusemar/cms-rplsmart">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/Screenshot 2024-10-23 115956.png" class="work__image" alt="Project 3" />
-            </div>
-          </div>
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>SmartLearn</h3>
-              <p>
-                SmartLearn is an online course platform that provides a variety of courses and tutorials in the field of
-                technology.
-              </p>
-              <ul class="work__list">
-                <li>Tailwind CSS</li>
-                <li>Alpine JS</li>
-                <li>Laravel</li>
-                <li>Mysql</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://smartlearn.sinaukode.my.id/" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/prabusemar/kursus-online">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/Screenshot 2024-10-23 120059.png" class="work__image" alt="Project 3" />
-            </div>
+          <!-- Indicators -->
+          <div class="work-slider__nav">
+            <div class="work-slider__indicator work-slider__indicator--active"></div>
+            <div class="work-slider__indicator"></div>
+            <div class="work-slider__indicator"></div>
+            <div class="work-slider__indicator"></div>
+            <div class="work-slider__indicator"></div>
+            <div class="work-slider__indicator"></div>
+            <div class="work-slider__indicator"></div>
           </div>
         </div>
       </div>
@@ -535,6 +592,31 @@
   <a href="#top" class="back-to-top" title="Back to Top">
     <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image" />
   </a>
+
+  <!-- Image Modal -->
+  <div class="image-modal">
+    <div class="image-modal__loading"></div>
+    <div class="image-modal__content">
+      <img class="image-modal__img" src="" alt="">
+      <div class="image-modal__caption"></div>
+    </div>
+
+    <button class="image-modal__close">&times;</button>
+
+    <div class="image-modal__nav">
+      <button class="image-modal__nav-btn image-modal__prev">
+        <svg viewBox="0 0 24 24">
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+        </svg>
+      </button>
+      <button class="image-modal__nav-btn image-modal__next">
+        <svg viewBox="0 0 24 24">
+          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
   <script src="./index.js"></script>
 </body>
 
