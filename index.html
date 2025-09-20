@@ -11,9 +11,11 @@
     Pribadi Ramadhan | A Teacher and Full-Stack Web Developer | based in Ciamis, Indonesia.
   </title>
 
-  <meta name="description" content="Add small description of yourslef.">
+  <meta name="description"
+    content="Full-Stack Web Developer and Educator specializing in JavaScript, Laravel, and modern web development.">
   <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
-  <meta name="keywords" content="Put your name, skills and some coding keywords" />
+  <meta name="keywords"
+    content="Pribadi Ramadhan, Full-Stack Developer, Web Developer, JavaScript, Laravel, React, Vue, Teacher, Educator" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="index.css" />
 
@@ -23,31 +25,124 @@
 
   <!-- ***** Header ***** -->
   <header class="header" role="banner" id="top">
-    <div class="row">
-      <nav class="nav" role="navigation">
-        <ul class="nav__items">
-          <li class="nav__item">
-            <a href="#about" class="nav__link">About</a>
-          </li>
-          <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-          <li class="nav__item"><a href="#clients" class="nav__link">Clients</a></li>
+    <nav class="nav" role="navigation">
+      <ul class="nav__items">
+        <li class="nav__item">
+          <a href="#about" class="nav__link">About</a>
+        </li>
+        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+        <li class="nav__item"><a href="#clients" class="nav__link">Clients</a></li>
+        <li class="nav__item">
+          <a href="#contact" class="nav__link">Contact</a>
+        </li>
+      </ul>
+      <!-- Mobile menu toggle button (optional, JS will handle) -->
+      <!-- <button class="nav-toggle" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button> -->
+    </nav>
 
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <div class="header-container">
+      <div class="header-content">
+        <div class="header-left">
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img src="./images/pribadi.jpeg" alt="Pribadi Ramadhan" class="profile-image">
+              <div class="profile-overlay">
+                <div class="social-links">
+                  <a href="https://github.com/prabusemar/" target="_blank" class="social-link">
+                    <img src="./images/github.svg" alt="GitHub">
+                  </a>
+                  <a href="https://www.linkedin.com/in/pribadi-ramadhan/" target="_blank" class="social-link">
+                    <img src="./images/linkedin.svg" alt="LinkedIn">
+                  </a>
+                  <a href="https://leetcode.com/prabusemar/" target="_blank" class="social-link">
+                    <img src="./images/leetcode.svg" alt="LeetCode">
+                  </a>
+                </div>
+              </div>
+            </div>
 
-    <div class="container">
-      <div class="header-content text-center">
-        <h1 class="header-title">
-          Pribadi Ramadhan
-        </h1>
-        <p class="header-subtitle">Full-Stack Web Developer and a Software Engineering Educator based in Ciamis,
-          Indonesia.</p>
-        <a href="#contact" class="btn btn-danger btn-lg mt-4">Get in touch</a>
+            <div class="profile-info">
+              <h1 class="header-title">
+                Pribadi <span class="text-gradient">Ramadhan</span>
+              </h1>
+              <p class="header-subtitle">Full-Stack Web Developer & Educator</p>
+              <p class="header-location">Based in Ciamis, Indonesia</p>
+
+              <div class="header-stats">
+                <div class="stat">
+                  <span class="stat-number">50+</span>
+                  <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">5+</span>
+                  <span class="stat-label">Years Exp</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">100%</span>
+                  <span class="stat-label">Satisfaction</span>
+                </div>
+              </div>
+
+              <div class="header-actions">
+                <a href="#contact" class="btn btn-primary">
+                  <span>Get in touch</span>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+                <a href="#" class="btn btn-secondary">
+                  <span style="display: block; margin: 0 auto;">View Resume</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="hero-visual">
+            <div class="floating-shapes">
+              <div class="shape shape-1"></div>
+              <div class="shape shape-2"></div>
+              <div class="shape shape-3"></div>
+              <div class="shape shape-4"></div>
+            </div>
+            <div class="code-window">
+              <div class="window-header">
+                <div class="window-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="window-title">portfolio.js</div>
+              </div>
+              <div class="window-content">
+                <div class="code-line">
+                  <span class="code-keyword">const</span> developer = <span class="code-brace">{</span>
+                </div>
+                <div class="code-line">
+                  <span class="code-property">name:</span> <span class="code-string">"Pribadi Ramadhan"</span>,
+                </div>
+                <div class="code-line">
+                  <span class="code-property">role:</span> <span class="code-string">"Full-Stack Developer"</span>,
+                </div>
+                <div class="code-line">
+                  <span class="code-property">passion:</span> <span class="code-string">"Creating amazing web
+                    experiences"</span>
+                </div>
+                <div class="code-line">
+                  <span class="code-brace">}</span>;
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+
     </div>
   </header>
 
@@ -66,7 +161,6 @@
               user-friendly web applications that meet the needs of modern users. My expertise spans across Fullstack
               Development, with a deep focus on JavaScript (React.js, Vue.js, Inertia) and Laravel, complemented by a
               flair for creating visually compelling and highly responsive landing pages using Framer and Elementor.
-
             </p>
             <!-- Provide a link to your resume -->
             <a href="#" class="btn btn-lg">My Resume</a>
@@ -74,8 +168,8 @@
 
           <div class="about__photo-container">
             <!-- Add a nice photo of yourself -->
-            <img class="about__photo rounded-3" src="./images/pribadi.jpeg" alt="" width="390"
-              style="border-radius: 10px;" />
+            <img class="about__photo rounded-3" src="./images/pribadi.jpeg"
+              alt="Pribadi Ramadhan - Full Stack Developer" style="border-radius: 10px;" />
           </div>
         </div>
       </div>
@@ -96,10 +190,8 @@
                   style="max-width: 100%; height: 200px; object-fit: contain;">
                 <h5 class="card-title" style="color: #000000; font-size: 3rem; font-weight: 600;">Basic Coding</h5>
                 <p class="card-text" style="color: #333333; font-size: 1.5rem;">Are you ready to start your journey into
-                  the
-                  world of coding? I provide step-by-step guidance to help you master HTML, CSS, and JavaScript.
-                  Together,
-                  we will build your foundation for web development success.
+                  the world of coding? I provide step-by-step guidance to help you master HTML, CSS, and JavaScript.
+                  Together, we will build your foundation for web development success.
                 </p>
               </div>
             </div>
@@ -113,13 +205,10 @@
                 <img src="./images/man-working-on-website-development.png" alt="Web Development" class="mb-4 img-fluid"
                   style="max-width: 100%; height: 200px; object-fit: contain;">
                 <h5 class="card-title" style="color: #000000; font-size: 3rem; font-weight: 600;">Web Development (JS
-                  Stack
-                  / Laravel)</h5>
+                  Stack / Laravel)</h5>
                 <p class="card-text" style="color: #333333; font-size: 1.5rem;">Need a dynamic, fast, and secure
-                  website? I
-                  specialize in building custom web solutions using modern JavaScript stacks like Vue,React, Node.js, or
-                  backend
-                  frameworks like Laravel.
+                  website? I specialize in building custom web solutions using modern JavaScript stacks like Vue, React,
+                  Node.js, or backend frameworks like Laravel.
                 </p>
               </div>
             </div>
@@ -135,8 +224,8 @@
                 <h5 class="card-title" style="color: #000000; font-size: 3rem; font-weight: 600;">WordPress Development
                 </h5>
                 <p class="card-text" style="color: #333333; font-size: 1.5rem;">Looking for a powerful WordPress
-                  website?
-                  Whether it’s a simple landing page or a feature-rich website with dynamic content, I’m here to help.
+                  website? Whether it's a simple landing page or a feature-rich website with dynamic content, I'm here
+                  to help.
                 </p>
               </div>
             </div>
@@ -150,11 +239,9 @@
                 <img src="./images/woman-designing-website.png" alt="Landing Page with Framer" class="mb-4 img-fluid"
                   style="max-width: 100%; height: 200px; object-fit: contain;">
                 <h5 class="card-title" style="color: #000000; font-size: 3rem; font-weight: 600;">Landing Page with
-                  Framer
-                </h5>
+                  Framer</h5>
                 <p class="card-text" style="color: #333333; font-size: 1.5rem;">Want a modern, interactive landing page
-                  that
-                  grabs attention? I design and build stunning landing pages using Framer that are optimized for
+                  that grabs attention? I design and build stunning landing pages using Framer that are optimized for
                   conversions.
                 </p>
               </div>
@@ -170,10 +257,8 @@
                   class="mb-4 img-fluid" style="max-width: 100%; height: 200px; object-fit: contain;">
                 <h5 class="card-title" style="color: #000000; font-size: 3rem; font-weight: 600;">UI/UX Design</h5>
                 <p class="card-text" style="color: #333333; font-size: 1.5rem;">Your users deserve a seamless and
-                  intuitive
-                  experience. Let me help you design a user interface that is not only beautiful but also user-friendly
-                  and
-                  effective.
+                  intuitive experience. Let me help you design a user interface that is not only beautiful but also
+                  user-friendly and effective.
                 </p>
               </div>
             </div>
@@ -183,77 +268,251 @@
       </div>
     </section>
 
-
     <!-- ***** Skills ***** -->
     <section class="skills" id="skills">
       <div class="container">
-        <h2 class="text-left mb-4 style=" color: #f8f9fa; font-size: 5rem">My Skills</h2>
-        <div class="row text-center">
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/html.png" alt="HTML5" class="img-fluid" style="max-width: 50px;" />
+        <h2 class="text-center mb-5">My Skills</h2>
+        <div class="skills-grid">
+          <!-- HTML5 -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/html.png" alt="HTML5" />
+            </div>
+            <div class="skill-name">HTML5</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="95"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/css.png" alt="CSS3" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- CSS3 -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/css.png" alt="CSS3" />
+            </div>
+            <div class="skill-name">CSS3</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="90"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/javascript.png" alt="JavaScript" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- JavaScript -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/javascript.png" alt="JavaScript" />
+            </div>
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="88"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/react.png" alt="React" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- React -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/react.png" alt="React" />
+            </div>
+            <div class="skill-name">React</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="85"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/vue.png" alt="Vue.js" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- Vue.js -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/vue.png" alt="Vue.js" />
+            </div>
+            <div class="skill-name">Vue.js</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="87"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/nodejs.png" alt="Node.js" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- Node.js -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/nodejs.png" alt="Node.js" />
+            </div>
+            <div class="skill-name">Node.js</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="82"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/php.png" alt="PHP" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- PHP -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/php.png" alt="PHP" />
+            </div>
+            <div class="skill-name">PHP</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="90"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/tailwind.png" alt="Tailwind" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- Tailwind -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/tailwind.png" alt="Tailwind" />
+            </div>
+            <div class="skill-name">Tailwind</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="92"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/git.png" alt="Git" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- Git -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/git.png" alt="Git" />
+            </div>
+            <div class="skill-name">Git</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="91"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/Framer.png" alt="Framer" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- Framer -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/Framer.png" alt="Framer" />
+            </div>
+            <div class="skill-name">Framer</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="80"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/mysql.png" alt="Mysql" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- MySQL -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/mysql.png" alt="MySQL" />
+            </div>
+            <div class="skill-name">MySQL</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="89"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/jquery.png" alt="Jquery" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- jQuery -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/jquery.png" alt="jQuery" />
+            </div>
+            <div class="skill-name">jQuery</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="84"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/npm.png" alt="Npm" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- NPM -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/npm.png" alt="NPM" />
+            </div>
+            <div class="skill-name">NPM</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="86"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/python.png" alt="Python" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- Python -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/python.png" alt="Python" />
+            </div>
+            <div class="skill-name">Python</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="78"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/typescript.png" alt="Typescript" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- TypeScript -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/typescript.png" alt="TypeScript" />
+            </div>
+            <div class="skill-name">TypeScript</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="83"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/sql.png" alt="SQL" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- SQL -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/sql.png" alt="SQL" />
+            </div>
+            <div class="skill-name">SQL</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="88"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/nestjs.png" alt="Nest" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- NestJS -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/nestjs.png" alt="NestJS" />
+            </div>
+            <div class="skill-name">NestJS</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="75"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/mongo-db.png" alt="Mongodb" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- MongoDB -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/mongo-db.png" alt="MongoDB" />
+            </div>
+            <div class="skill-name">MongoDB</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="80"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/flutter.png" alt="Flutter" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- Flutter -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/flutter.png" alt="Flutter" />
+            </div>
+            <div class="skill-name">Flutter</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="72"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/wordpress.png" alt="Wordpress" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- WordPress -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/wordpress.png" alt="WordPress" />
+            </div>
+            <div class="skill-name">WordPress</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="85"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/visual-studio-code.png" alt="VS Code" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- VS Code -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/visual-studio-code.png" alt="VS Code" />
+            </div>
+            <div class="skill-name">VS Code</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="94"></div>
+            </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-2 mb-4">
-            <img src="./images/github.svg" alt="GitHub" class="img-fluid" style="max-width: 50px;" />
+
+          <!-- GitHub -->
+          <div class="skill-item">
+            <div class="skill-icon">
+              <img src="./images/github.svg" alt="GitHub" />
+            </div>
+            <div class="skill-name">GitHub</div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-level="90"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -516,7 +775,6 @@
             <div class="work-slider__indicator"></div>
           </div>
         </div>
-      </div>
     </section>
 
     <!-- ***** Clients ***** -->
@@ -543,40 +801,36 @@
       <div class="contact__info">
         <p>
           Ready to take the next step? Whether you need a mentor to guide your learning journey or a skilled developer
-          to
-          bring your ideas to life, I’m here to help. I’m passionate about teaching, creating, and collaborating on
-          meaningful
-          projects. Let’s connect and explore how we can work together to achieve your goals.
+          to bring your ideas to life, I'm here to help. I'm passionate about teaching, creating, and collaborating on
+          meaningful projects. Let's connect and explore how we can work together to achieve your goals.
         </p>
         <p>
-          I’m always open to new opportunities, whether it's a website redesign, full-stack development, or personalized
+          I'm always open to new opportunities, whether it's a website redesign, full-stack development, or personalized
           coding lessons. Drop me a message and let's start the conversation!
         </p>
         <!-- Replace the email with yours -->
-        <a href="mailto:you@example.com" class="btn btn-lg">pribadi.ramadhan@gmail.com</a>
+        <a href="mailto:pribadi.ramadhan@gmail.com" class="btn btn-lg">pribadi.ramadhan@gmail.com</a>
       </div>
     </div>
   </section>
 
-
   <!-- ***** Footer ***** -->
-
   <footer role="contentinfo" class="footer">
     <div class="row">
       <!-- Update the links to point to your accounts -->
       <ul class="footer__social-links">
         <li class="footer__social-link-item">
-          <a href="https://github.com/prabusemar/" title="Link to Github Profile">
+          <a href="https://github.com/prabusemar/" title="Link to Github Profile" target="_blank">
             <img src="./images/github.svg" class="footer__social-image" alt="Github">
           </a>
         </li>
         <li class="footer__social-link-item">
-          <a href="https://leetcode.com/prabusemar/" title="Link to Leetcode Profile">
+          <a href="https://leetcode.com/prabusemar/" title="Link to Leetcode Profile" target="_blank">
             <img src="./images/leetcode.svg" class="footer__social-image" alt="Leetcode">
           </a>
         </li>
         <li class="footer__social-link-item">
-          <a href="https://www.linkedin.com/in/pribadi-ramadhan/">
+          <a href="https://www.linkedin.com/in/pribadi-ramadhan/" target="_blank">
             <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image"
               alt="Linkedin">
           </a>
@@ -584,7 +838,8 @@
       </ul>
 
       <p>
-        &copy; 2024 - Created by <a href="https://github.com/prabusemar" class="link">Pribadi Ramadhan</a>.
+        &copy; 2024 - Created by <a href="https://github.com/prabusemar" class="link" target="_blank">Pribadi
+          Ramadhan</a>.
       </p>
     </div>
   </footer>
