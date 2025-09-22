@@ -102,7 +102,6 @@ function initNavbar() {
 function initWorkSlider() {
   const track = document.querySelector('.work-slider__track');
   const slides = document.querySelectorAll('.work-slider__slide');
-  const indicatorsContainer = document.querySelector('.work-slider__nav');
   const prevBtn = document.querySelector('.work-slider__btn--prev');
   const nextBtn = document.querySelector('.work-slider__btn--next');
 
@@ -111,142 +110,96 @@ function initWorkSlider() {
   let currentIndex = 0;
   const slideCount = slides.length;
   let slidesPerView = calculateSlidesPerView();
-  let maxIndex = Math.max(0, slideCount - slidesPerView);
+  let maxIndex = calculateMaxIndex();
 
-  // Calculate slides per view based on screen width
+  // Hitung slides per view berdasarkan lebar layar
   function calculateSlidesPerView() {
     if (window.innerWidth < 768) return 1;
     if (window.innerWidth < 1024) return 2;
-    return 3; // Default: 3 slides on desktop
+    return 3;
   }
 
-  // Update max index based on current slides per view
-  function updateMaxIndex() {
-    maxIndex = Math.max(0, slideCount - slidesPerView);
-    // Ensure currentIndex doesn't exceed maxIndex
-    if (currentIndex > maxIndex) {
-      currentIndex = maxIndex;
-    }
+  // Hitung max index berdasarkan slides per view
+  function calculateMaxIndex() {
+    return Math.max(0, slideCount - slidesPerView);
   }
 
-  // Create indicator dots
-  function createIndicators() {
-    indicatorsContainer.innerHTML = '';
-    const totalGroups = Math.ceil(slideCount / slidesPerView);
-
-    for (let i = 0; i < totalGroups; i++) {
-      const indicator = document.createElement('div');
-      indicator.className = 'work-slider__indicator';
-      if (i === 0) indicator.classList.add('work-slider__indicator--active');
-
-      indicator.addEventListener('click', () => {
-        goToSlide(i * slidesPerView);
-      });
-
-      indicatorsContainer.appendChild(indicator);
-    }
-  }
-
-  // Update slider position and states
+  // Update posisi dan status slider
   function updateSlider() {
     const slideWidth = 100 / slidesPerView;
-
     track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
 
-    // Update active states for slides
+    // Update status aktif untuk slide
     slides.forEach((slide, index) => {
-      slide.classList.remove('work-slider__slide--active', 'work-slider__slide--prev', 'work-slider__slide--next');
+      slide.classList.remove('work-slider__slide--active');
 
       if (index >= currentIndex && index < currentIndex + slidesPerView) {
-        if (index === currentIndex) {
-          slide.classList.add('work-slider__slide--active');
-        } else if (index === currentIndex + slidesPerView - 1) {
-          slide.classList.add('work-slider__slide--next');
-        } else {
-          slide.classList.add('work-slider__slide--prev');
-        }
+        slide.classList.add('work-slider__slide--active');
       }
     });
 
-    // Update indicators
-    updateIndicators();
-
-    // Update buttons state
+    // Update status tombol
     updateButtons();
   }
 
-  // Update indicator dots
-  function updateIndicators() {
-    const indicators = document.querySelectorAll('.work-slider__indicator');
-    const currentGroup = Math.floor(currentIndex / slidesPerView);
-
-    indicators.forEach((indicator, index) => {
-      if (index === currentGroup) {
-        indicator.classList.add('work-slider__indicator--active');
-      } else {
-        indicator.classList.remove('work-slider__indicator--active');
-      }
-    });
-  }
-
-  // Update navigation buttons state
+  // Update status tombol navigasi
   function updateButtons() {
     if (prevBtn) {
       prevBtn.disabled = currentIndex === 0;
+      prevBtn.style.opacity = currentIndex === 0 ? '0.3' : '1';
     }
     if (nextBtn) {
       nextBtn.disabled = currentIndex >= maxIndex;
+      nextBtn.style.opacity = currentIndex >= maxIndex ? '0.3' : '1';
     }
   }
 
-  // Go to next slide
+  // Pergi ke slide berikutnya
   function nextSlide() {
     if (currentIndex < maxIndex) {
       currentIndex += slidesPerView;
+      // Pastikan tidak melebihi batas
       if (currentIndex > maxIndex) currentIndex = maxIndex;
     } else {
-      currentIndex = 0; // Loop back to start if at end
+      // Kembali ke awal jika sudah di akhir
+      currentIndex = 0;
     }
     updateSlider();
   }
 
-  // Go to previous slide
+  // Pergi ke slide sebelumnya
   function prevSlide() {
     if (currentIndex > 0) {
       currentIndex -= slidesPerView;
+      // Pastikan tidak kurang dari 0
       if (currentIndex < 0) currentIndex = 0;
     } else {
-      // Go to end if at start
+      // Pergi ke akhir jika sudah di awal
       currentIndex = maxIndex;
     }
     updateSlider();
   }
 
-  // Go to specific slide
-  function goToSlide(index) {
-    if (index >= 0 && index <= maxIndex) {
-      currentIndex = index;
-      updateSlider();
-    }
-  }
-
-  // Handle window resize
+  // Handle resize window
   function handleResize() {
     const newSlidesPerView = calculateSlidesPerView();
+
     if (newSlidesPerView !== slidesPerView) {
       slidesPerView = newSlidesPerView;
-      updateMaxIndex();
-      createIndicators();
+      maxIndex = calculateMaxIndex();
 
-      // Reset to first slide when changing slides per view
-      currentIndex = 0;
+      // Pastikan currentIndex tidak melebihi maxIndex yang baru
+      if (currentIndex > maxIndex) {
+        currentIndex = maxIndex;
+      }
+
       updateSlider();
     }
   }
 
-  // Add event listeners
+  // Tambahkan event listeners
   function bindEvents() {
-    // Navigation buttons
+    // Tombol navigasi
     if (prevBtn) {
       prevBtn.addEventListener('click', prevSlide);
     }
@@ -255,17 +208,17 @@ function initWorkSlider() {
       nextBtn.addEventListener('click', nextSlide);
     }
 
-    // Keyboard navigation
+    // Navigasi keyboard
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') prevSlide();
       if (e.key === 'ArrowRight') nextSlide();
     });
 
-    // Touch swipe support
+    // Dukungan swipe untuk perangkat touch
     addSwipeSupport();
   }
 
-  // Add swipe support for touch devices
+  // Tambahkan dukungan swipe untuk perangkat touch
   function addSwipeSupport() {
     let startX = null;
     let movedX = false;
@@ -298,9 +251,7 @@ function initWorkSlider() {
     });
   }
 
-  // Initialize the slider
-  updateMaxIndex();
-  createIndicators();
+  // Inisialisasi slider
   bindEvents();
   updateSlider();
 
@@ -308,10 +259,8 @@ function initWorkSlider() {
   window.addEventListener('resize', handleResize);
 }
 
-// Initialize the slider when DOM is loaded
-document.addEventListener('DOMContentLoaded', function () {
-  initWorkSlider();
-});
+// Inisialisasi slider ketika DOM siap
+document.addEventListener('DOMContentLoaded', initWorkSlider);
 
 // Image Modal Functionality
 function initImageModal() {

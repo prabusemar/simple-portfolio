@@ -1289,45 +1289,6 @@ body:not(.user-is-tabbing) a:focus {
     transform: scale(0.98);
 }
 
-.work-slider__nav {
-    display: flex;
-    justify-content: center;
-    margin-top: 4rem;
-    gap: 1.5rem;
-}
-
-.work-slider__indicator {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.work-slider__indicator::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-pink);
-    transition: transform 0.3s ease;
-    border-radius: 50%;
-}
-
-.work-slider__indicator--active::before {
-    transform: translateX(100%);
-}
-
-.work-slider__indicator--active {
-    transform: scale(1.2);
-    box-shadow: 0 0 15px rgba(255, 50, 88, 0.5);
-}
-
 .work-slider__btn {
     position: absolute;
     top: 50%;
@@ -2464,4 +2425,274 @@ h2::after {
     overflow: hidden;
     position: relative;
     width: 100%;
+}
+
+.work-slider {
+    position: relative;
+    padding: 4rem 0;
+    margin: 0 auto;
+    max-width: 1180px;
+}
+
+.work-slider__container {
+    overflow: hidden;
+    position: relative;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.work-slider__track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 100%;
+}
+
+.work-slider__slide {
+    flex: 0 0 calc(100% / 3);
+    min-width: 0;
+    padding: 1rem;
+    opacity: 0.6;
+    transition: all 0.5s ease;
+    transform: scale(0.95);
+    box-sizing: border-box;
+}
+
+.work-slider__slide--active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+.work-slider__slide--prev,
+.work-slider__slide--next {
+    opacity: 0.8;
+    transform: scale(0.98);
+}
+
+.work-slider__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(18, 18, 18, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    z-index: 20;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+.work-slider__btn:hover {
+    background: linear-gradient(135deg, #ff3258 0%, #ff5c7c 100%);
+    transform: translateY(-50%) scale(1.1);
+    border-color: transparent;
+    box-shadow: 0 8px 30px rgba(255, 50, 88, 0.4);
+}
+
+.work-slider__btn--prev {
+    left: 10px;
+}
+
+.work-slider__btn--next {
+    right: 10px;
+}
+
+.work-slider__btn svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.work-slider__btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.work-slider__btn:disabled:hover {
+    transform: translateY(-50%);
+    background: rgba(18, 18, 18, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .work-slider__slide {
+        flex: 0 0 50%;
+    }
+
+    .work-slider__btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .work-slider__btn--prev {
+        left: 5px;
+    }
+
+    .work-slider__btn--next {
+        right: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .work-slider__slide {
+        flex: 0 0 100%;
+    }
+
+    .work-slider__btn {
+        display: flex;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-slider__btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .work-slider__btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.work-slider {
+    position: relative;
+    padding: 4rem 0;
+    margin: 0 auto;
+    max-width: 1180px;
+}
+
+.work-slider__container {
+    overflow: hidden;
+    position: relative;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.work-slider__track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 100%;
+}
+
+.work-slider__slide {
+    flex: 0 0 calc(100% / 3);
+    min-width: 0;
+    padding: 1rem;
+    opacity: 0.6;
+    transition: all 0.5s ease;
+    transform: scale(0.95);
+    box-sizing: border-box;
+}
+
+.work-slider__slide--active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+.work-slider__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(18, 18, 18, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    z-index: 20;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+.work-slider__btn:hover {
+    background: linear-gradient(135deg, #ff3258 0%, #ff5c7c 100%);
+    transform: translateY(-50%) scale(1.1);
+    border-color: transparent;
+    box-shadow: 0 8px 30px rgba(255, 50, 88, 0.4);
+}
+
+.work-slider__btn--prev {
+    left: 10px;
+}
+
+.work-slider__btn--next {
+    right: 10px;
+}
+
+.work-slider__btn svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.work-slider__btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.work-slider__btn:disabled:hover {
+    transform: translateY(-50%);
+    background: rgba(18, 18, 18, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .work-slider__slide {
+        flex: 0 0 50%;
+    }
+
+    .work-slider__btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .work-slider__btn--prev {
+        left: 5px;
+    }
+
+    .work-slider__btn--next {
+        right: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .work-slider__slide {
+        flex: 0 0 100%;
+    }
+
+    .work-slider__btn {
+        display: flex;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-slider__btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .work-slider__btn svg {
+        width: 18px;
+        height: 18px;
+    }
 }
