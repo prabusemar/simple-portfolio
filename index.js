@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initNavbar();
   initWorkSlider();
   initImageModal();
-  animateSkills();
   initSmoothScrolling();
   initScrollIndicator();
 });
@@ -68,27 +67,27 @@ function initNavbar() {
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
   const navLinks = document.querySelectorAll('.nav-link');
-  
+
   if (!hamburger || !navMenu) return;
-  
+
   // Toggle mobile menu
-  hamburger.addEventListener('click', function() {
+  hamburger.addEventListener('click', function () {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
     document.body.classList.toggle('no-scroll');
   });
-  
+
   // Close mobile menu when clicking on a link
   navLinks.forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function () {
       hamburger.classList.remove('active');
       navMenu.classList.remove('active');
       document.body.classList.remove('no-scroll');
     });
   });
-  
+
   // Navbar scroll effect
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
     if (navbar) {
       if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
@@ -107,11 +106,7 @@ function initWorkSlider() {
   const prevBtn = document.querySelector('.work-slider__btn--prev');
   const nextBtn = document.querySelector('.work-slider__btn--next');
 
-  // Check if slider elements exist
-  if (!track || slides.length === 0) {
-    console.log('Work slider not found, skipping initialization');
-    return;
-  }
+  if (!track || slides.length === 0) return;
 
   let currentIndex = 0;
   const slideCount = slides.length;
@@ -120,33 +115,43 @@ function initWorkSlider() {
 
   // Calculate slides per view based on screen width
   function calculateSlidesPerView() {
-    if (window.innerWidth < 600) return 1;
-    if (window.innerWidth < 900) return 2;
-    return 3;
+    if (window.innerWidth < 768) return 1;
+    if (window.innerWidth < 1024) return 2;
+    return 3; // Default: 3 slides on desktop
   }
 
   // Update slider position and states
   function updateSlider() {
     const slideWidth = 100 / slidesPerView;
+
+    // Clamp currentIndex so we always show full slides
+    const maxIndex = Math.max(0, slideCount - slidesPerView);
+    if (currentIndex > maxIndex) {
+      currentIndex = maxIndex;
+    }
+
     track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
 
     // Update active states for slides
     slides.forEach((slide, index) => {
       slide.classList.remove('work-slider__slide--active', 'work-slider__slide--prev', 'work-slider__slide--next');
 
-      if (index === currentIndex) {
-        slide.classList.add('work-slider__slide--active');
-      } else if (index === currentIndex - 1) {
-        slide.classList.add('work-slider__slide--prev');
-      } else if (index === currentIndex + 1) {
-        slide.classList.add('work-slider__slide--next');
+      if (index >= currentIndex && index < currentIndex + slidesPerView) {
+        if (index === currentIndex) {
+          slide.classList.add('work-slider__slide--active');
+        } else if (index === currentIndex + slidesPerView - 1) {
+          slide.classList.add('work-slider__slide--next');
+        } else {
+          slide.classList.add('work-slider__slide--prev');
+        }
       }
     });
 
     // Update indicators
     if (indicators.length > 0) {
+      const indicatorIndex = Math.floor(currentIndex / slidesPerView);
       indicators.forEach((indicator, index) => {
-        if (index === currentIndex) {
+        if (index === indicatorIndex) {
           indicator.classList.add('work-slider__indicator--active');
         } else {
           indicator.classList.remove('work-slider__indicator--active');
@@ -156,9 +161,6 @@ function initWorkSlider() {
 
     // Update buttons state
     updateButtons();
-
-    // Restart auto slide
-    restartAutoSlide();
   }
 
   // Update navigation buttons state
@@ -166,19 +168,19 @@ function initWorkSlider() {
     if (prevBtn) {
       prevBtn.disabled = currentIndex === 0;
     }
-
     if (nextBtn) {
-      nextBtn.disabled = currentIndex >= slideCount - slidesPerView;
+      const maxIndex = Math.max(0, slideCount - slidesPerView);
+      nextBtn.disabled = currentIndex >= maxIndex;
     }
   }
 
   // Go to next slide
   function nextSlide() {
-    if (currentIndex < slideCount - slidesPerView) {
-      currentIndex++;
+    const maxIndex = Math.max(0, slideCount - slidesPerView);
+    if (currentIndex < maxIndex) {
+      currentIndex += slidesPerView;
     } else {
-      // Loop back to the beginning
-      currentIndex = 0;
+      currentIndex = 0; // Loop back to start if at end
     }
     updateSlider();
   }
@@ -186,42 +188,62 @@ function initWorkSlider() {
   // Go to previous slide
   function prevSlide() {
     if (currentIndex > 0) {
-      currentIndex--;
+      currentIndex -= slidesPerView;
+      if (currentIndex < 0) currentIndex = 0;
     } else {
-      // Loop to the end
-      currentIndex = Math.max(0, slideCount - slidesPerView);
+      // Go to end if at start
+      const maxIndex = Math.max(0, slideCount - slidesPerView);
+      currentIndex = maxIndex;
     }
     updateSlider();
   }
 
   // Go to specific slide
   function goToSlide(index) {
-    if (index >= 0 && index <= slideCount - slidesPerView) {
+    const maxIndex = Math.max(0, slideCount - slidesPerView);
+    if (index >= 0 && index <= maxIndex) {
       currentIndex = index;
       updateSlider();
     }
   }
 
-  // Start auto slide
-  function startAutoSlide() {
-    stopAutoSlide();
-    autoSlideInterval = setInterval(() => {
-      nextSlide();
-    }, 5000);
-  }
-
-  // Stop auto slide
-  function stopAutoSlide() {
-    if (autoSlideInterval) {
-      clearInterval(autoSlideInterval);
-      autoSlideInterval = null;
+  // Handle window resize
+  function handleResize() {
+    const newSlidesPerView = calculateSlidesPerView();
+    if (newSlidesPerView !== slidesPerView) {
+      slidesPerView = newSlidesPerView;
+      // Reset to first slide when changing slides per view
+      currentIndex = 0;
+      updateSlider();
     }
   }
 
-  // Restart auto slide
-  function restartAutoSlide() {
-    stopAutoSlide();
-    startAutoSlide();
+  // Add event listeners
+  function bindEvents() {
+    // Navigation buttons
+    if (prevBtn) {
+      prevBtn.addEventListener('click', prevSlide);
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', nextSlide);
+    }
+
+    // Indicators
+    if (indicators.length > 0) {
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => goToSlide(index * slidesPerView));
+      });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === 'ArrowRight') nextSlide();
+    });
+
+    // Touch swipe support
+    addSwipeSupport();
   }
 
   // Add swipe support for touch devices
@@ -257,66 +279,29 @@ function initWorkSlider() {
     });
   }
 
-  // Add event listeners
-  function bindEvents() {
-    // Navigation buttons
-    if (prevBtn) {
-      prevBtn.addEventListener('click', prevSlide);
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', nextSlide);
-    }
-
-    // Indicators
-    if (indicators.length > 0) {
-      indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => goToSlide(index));
-      });
-    }
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') prevSlide();
-      if (e.key === 'ArrowRight') nextSlide();
-    });
-
-    // Touch swipe support
-    addSwipeSupport();
-  }
-
-  // Handle window resize
-  function handleResize() {
-    const newSlidesPerView = calculateSlidesPerView();
-
-    if (newSlidesPerView !== slidesPerView) {
-      slidesPerView = newSlidesPerView;
-
-      // Ensure currentIndex is valid for the new view
-      if (currentIndex > slideCount - slidesPerView) {
-        currentIndex = Math.max(0, slideCount - slidesPerView);
-      }
-
-      updateSlider();
-    }
-  }
-
   // Initialize the slider
   bindEvents();
   updateSlider();
-  startAutoSlide();
-
-  // Pause auto-slide when user interacts with slider
-  const sliderContainer = document.querySelector('.work-slider__container');
-  if (sliderContainer) {
-    sliderContainer.addEventListener('mouseenter', stopAutoSlide);
-    sliderContainer.addEventListener('mouseleave', startAutoSlide);
-    sliderContainer.addEventListener('focusin', stopAutoSlide);
-    sliderContainer.addEventListener('focusout', startAutoSlide);
-  }
 
   // Handle window resize
-  window.addEventListener('resize', handleResize);
+window.addEventListener('resize', handleResize);
+
+// Initialize the slider when DOM is loaded
+document.addEventListener('DOMContentLoaded', function () {
+  initWorkSlider();
+});
+
+// Pause auto-slide when user interacts with slider
+const sliderContainer = document.querySelector('.work-slider__container');
+if (sliderContainer) {
+  sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+  sliderContainer.addEventListener('mouseleave', startAutoSlide);
+  sliderContainer.addEventListener('focusin', stopAutoSlide);
+  sliderContainer.addEventListener('focusout', startAutoSlide);
+}
+
+// Handle window resize
+window.addEventListener('resize', handleResize);
 }
 
 // Image Modal Functionality
@@ -467,42 +452,6 @@ function initImageModal() {
   bindEvents();
 }
 
-// Animate Skills Progress Bars
-function animateSkills() {
-  const progressBars = document.querySelectorAll('.progress-bar');
-
-  if (progressBars.length === 0) {
-    console.log('No progress bars found, skipping animation');
-    return;
-  }
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.5
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const progressBar = entry.target;
-        const level = progressBar.getAttribute('data-level') || '80';
-
-        // Animate the progress bar
-        progressBar.style.width = level + '%';
-
-        // Stop observing after animation
-        observer.unobserve(progressBar);
-      }
-    });
-  }, observerOptions);
-
-  // Observe each progress bar
-  progressBars.forEach(bar => {
-    observer.observe(bar);
-  });
-}
-
 // Smooth Scrolling for Navigation Links
 function initSmoothScrolling() {
   const navLinks = document.querySelectorAll('a[href^="#"]');
@@ -514,7 +463,7 @@ function initSmoothScrolling() {
       if (this.getAttribute('href').startsWith('http') || this.getAttribute('href').startsWith('mailto')) {
         return;
       }
-      
+
       e.preventDefault();
 
       const targetId = this.getAttribute('href');
@@ -557,12 +506,12 @@ function handleWindowResize() {
   if (track) {
     initWorkSlider();
   }
-  
+
   // Close mobile menu when switching to desktop view
   if (window.innerWidth > 768) {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     if (hamburger && navMenu) {
       hamburger.classList.remove('active');
       navMenu.classList.remove('active');
@@ -576,7 +525,7 @@ window.addEventListener('resize', handleWindowResize);
 
 // Initialize everything when DOM is fully loaded
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     // All initialization functions are already called via DOMContentLoaded
   });
 }
