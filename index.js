@@ -102,7 +102,7 @@ function initNavbar() {
 function initWorkSlider() {
   const track = document.querySelector('.work-slider__track');
   const slides = document.querySelectorAll('.work-slider__slide');
-  const indicators = document.querySelectorAll('.work-slider__indicator');
+  const indicatorsContainer = document.querySelector('.work-slider__nav');
   const prevBtn = document.querySelector('.work-slider__btn--prev');
   const nextBtn = document.querySelector('.work-slider__btn--next');
 
@@ -111,7 +111,7 @@ function initWorkSlider() {
   let currentIndex = 0;
   const slideCount = slides.length;
   let slidesPerView = calculateSlidesPerView();
-  let autoSlideInterval = null;
+  let maxIndex = Math.max(0, slideCount - slidesPerView);
 
   // Calculate slides per view based on screen width
   function calculateSlidesPerView() {
@@ -120,15 +120,36 @@ function initWorkSlider() {
     return 3; // Default: 3 slides on desktop
   }
 
-  // Update slider position and states
-  function updateSlider() {
-    const slideWidth = 100 / slidesPerView;
-
-    // Clamp currentIndex so we always show full slides
-    const maxIndex = Math.max(0, slideCount - slidesPerView);
+  // Update max index based on current slides per view
+  function updateMaxIndex() {
+    maxIndex = Math.max(0, slideCount - slidesPerView);
+    // Ensure currentIndex doesn't exceed maxIndex
     if (currentIndex > maxIndex) {
       currentIndex = maxIndex;
     }
+  }
+
+  // Create indicator dots
+  function createIndicators() {
+    indicatorsContainer.innerHTML = '';
+    const totalGroups = Math.ceil(slideCount / slidesPerView);
+
+    for (let i = 0; i < totalGroups; i++) {
+      const indicator = document.createElement('div');
+      indicator.className = 'work-slider__indicator';
+      if (i === 0) indicator.classList.add('work-slider__indicator--active');
+
+      indicator.addEventListener('click', () => {
+        goToSlide(i * slidesPerView);
+      });
+
+      indicatorsContainer.appendChild(indicator);
+    }
+  }
+
+  // Update slider position and states
+  function updateSlider() {
+    const slideWidth = 100 / slidesPerView;
 
     track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
 
@@ -148,19 +169,24 @@ function initWorkSlider() {
     });
 
     // Update indicators
-    if (indicators.length > 0) {
-      const indicatorIndex = Math.floor(currentIndex / slidesPerView);
-      indicators.forEach((indicator, index) => {
-        if (index === indicatorIndex) {
-          indicator.classList.add('work-slider__indicator--active');
-        } else {
-          indicator.classList.remove('work-slider__indicator--active');
-        }
-      });
-    }
+    updateIndicators();
 
     // Update buttons state
     updateButtons();
+  }
+
+  // Update indicator dots
+  function updateIndicators() {
+    const indicators = document.querySelectorAll('.work-slider__indicator');
+    const currentGroup = Math.floor(currentIndex / slidesPerView);
+
+    indicators.forEach((indicator, index) => {
+      if (index === currentGroup) {
+        indicator.classList.add('work-slider__indicator--active');
+      } else {
+        indicator.classList.remove('work-slider__indicator--active');
+      }
+    });
   }
 
   // Update navigation buttons state
@@ -169,16 +195,15 @@ function initWorkSlider() {
       prevBtn.disabled = currentIndex === 0;
     }
     if (nextBtn) {
-      const maxIndex = Math.max(0, slideCount - slidesPerView);
       nextBtn.disabled = currentIndex >= maxIndex;
     }
   }
 
   // Go to next slide
   function nextSlide() {
-    const maxIndex = Math.max(0, slideCount - slidesPerView);
     if (currentIndex < maxIndex) {
       currentIndex += slidesPerView;
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
     } else {
       currentIndex = 0; // Loop back to start if at end
     }
@@ -192,7 +217,6 @@ function initWorkSlider() {
       if (currentIndex < 0) currentIndex = 0;
     } else {
       // Go to end if at start
-      const maxIndex = Math.max(0, slideCount - slidesPerView);
       currentIndex = maxIndex;
     }
     updateSlider();
@@ -200,7 +224,6 @@ function initWorkSlider() {
 
   // Go to specific slide
   function goToSlide(index) {
-    const maxIndex = Math.max(0, slideCount - slidesPerView);
     if (index >= 0 && index <= maxIndex) {
       currentIndex = index;
       updateSlider();
@@ -212,6 +235,9 @@ function initWorkSlider() {
     const newSlidesPerView = calculateSlidesPerView();
     if (newSlidesPerView !== slidesPerView) {
       slidesPerView = newSlidesPerView;
+      updateMaxIndex();
+      createIndicators();
+
       // Reset to first slide when changing slides per view
       currentIndex = 0;
       updateSlider();
@@ -227,13 +253,6 @@ function initWorkSlider() {
 
     if (nextBtn) {
       nextBtn.addEventListener('click', nextSlide);
-    }
-
-    // Indicators
-    if (indicators.length > 0) {
-      indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => goToSlide(index * slidesPerView));
-      });
     }
 
     // Keyboard navigation
@@ -280,29 +299,19 @@ function initWorkSlider() {
   }
 
   // Initialize the slider
+  updateMaxIndex();
+  createIndicators();
   bindEvents();
   updateSlider();
 
   // Handle window resize
-window.addEventListener('resize', handleResize);
+  window.addEventListener('resize', handleResize);
+}
 
 // Initialize the slider when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
   initWorkSlider();
 });
-
-// Pause auto-slide when user interacts with slider
-const sliderContainer = document.querySelector('.work-slider__container');
-if (sliderContainer) {
-  sliderContainer.addEventListener('mouseenter', stopAutoSlide);
-  sliderContainer.addEventListener('mouseleave', startAutoSlide);
-  sliderContainer.addEventListener('focusin', stopAutoSlide);
-  sliderContainer.addEventListener('focusout', startAutoSlide);
-}
-
-// Handle window resize
-window.addEventListener('resize', handleResize);
-}
 
 // Image Modal Functionality
 function initImageModal() {
